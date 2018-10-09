@@ -29,7 +29,7 @@ app.post('/webhook', function(req, res) {
         if (message.message) {
           if (message.message.text) {
             var text = message.message.text;
-            console.log(text); 
+            res.send(text); 
             sendMessage(senderId, "xin chao: " + text);
           }
         }
