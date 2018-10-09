@@ -1,0 +1,24 @@
+{
+  "name": "chatbotfanpage",
+  "version": "1.0.0",
+  "description": "A chat bot for facebook fanpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellotoan1203/chatbotAlphaShop.git"
+  },
+  "author": "Ngo Toan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellotoan1203/chatbotAlphaShop/issues"
+  },
+  "homepage": "https://github.com/hellotoan1203/chatbotAlphaShop#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  }
+}
