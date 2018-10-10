@@ -29,13 +29,15 @@ app.post('/webhook', function(req, res) {
         if (message.message) {
           if (message.message.text) {
             var text = message.message.text;
-            res.send(text); 
-            sendMessage(senderId, "xin chao: " + text);
+            console.log(text); 
+            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop");
+          }
+          if(message.postback.payload){
+            console.log(payload);
           }
         }
       }
     }
-  
     res.status(200).send("OK");
   });
 
@@ -51,7 +53,24 @@ app.post('/webhook', function(req, res) {
           id: senderId
         },
         message: {
-          text: message
+          text: message,
+          quick_replies: [
+            {
+              content_type :"text",
+              title:"Địa chỉ",
+              payload:"<POSTBACK_DIACHI>"
+            },
+            {
+              content_type :"text",
+              title:"Link Shopee",
+              payload:"<POSTBACK_SHOPEE>"
+            },
+            {
+              content_type :"text",
+              title:"Số điện thoại",
+              payload:"<POSTBACK_SHOPEE>"
+            }
+          ]
         },
       }
     });
