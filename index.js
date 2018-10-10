@@ -24,7 +24,7 @@ app.post('/webhook', function(req, res) {
     var entries = req.body.entry;
     for (var entry of entries) {
       console.log(entry)
-      var messaging = entry.messaging;
+      var messaging = entry.standby;
       console.log(messaging)
       for (var message of messaging) {
         var senderId = message.sender.id;
