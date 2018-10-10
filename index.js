@@ -28,10 +28,9 @@ app.post('/webhook', function(req, res) {
       for (var message of messaging) {
         var senderId = message.sender.id;
         if (message.message) {
-          if (message.message.text !== "" && message.message.quick_replies == undefined) {
+          if (message.message.text !== "") {
             var text = message.message.text;
-            console.log(message.message);
-            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop, dưới đây là 1 số thông tin nhanh mà chúng mình có thể hỗ trợ bạn");
+            console.log(text)
           }
           if(message.message.quick_replies){
             console.log(message.message.quick_replies.payload)
