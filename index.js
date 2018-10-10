@@ -28,13 +28,13 @@ app.post('/webhook', function(req, res) {
       for (var message of messaging) {
         var senderId = message.sender.id;
         if (message.message) {
-          if (message.message.text !== "") {
+          if (message.message.text !== "" && message.message.quick_replies == undefined) {
             var text = message.message.text;
             console.log(message.message);
-            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop, dưới đây là 1 số thông tin nhanh mà chúng mình có thể giúp bạn được");
-            if(message.message.quick_replies){
-              console.log(message.message.quick_replies.payload)
-            }
+            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop, dưới đây là 1 số thông tin nhanh mà chúng mình có thể hỗ trợ bạn");
+          }
+          if(message.message.quick_replies){
+            console.log(message.message.quick_replies.payload)
           }
         }
       }
