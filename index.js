@@ -24,16 +24,15 @@ app.post('/webhook', function(req, res) {
     var entries = req.body.entry;
     for (var entry of entries) {
       var messaging = entry.messaging;
+      console.log(messaging);
       for (var message of messaging) {
+        
         var senderId = message.sender.id;
         if (message.message) {
-          if (message.message.text) {
+          if (message.message.text !== "") {
             var text = message.message.text;
-            console.log(text); 
-            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop");
-          }
-          if(message.postback.payload){
-            console.log(payload);
+            console.log(messgae);
+            //sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop");
           }
         }
       }
