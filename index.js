@@ -28,12 +28,12 @@ app.post('/webhook', function(req, res) {
       for (var message of messaging) {
         var senderId = message.sender.id;
         if (message.message) {
-          if (message.message.text !== "") {
+          if (message.message.text !== "" && message.message.quick_reply == undefined) {
             var text = message.message.text;
-            console.log(text)
+            sendFirstMessage(senderId,"Xin chào bạn đã quan tâm tới AlphaShop, dưới đây là 1 số thông tin nhanh mà chúng mình có thể hỗ trợ bạn")
           }
-          if(message.message.quick_replies){
-            console.log(message.message.quick_replies.payload)
+          if(message.message.quick_reply){
+            console.log(message.message.quick_reply.payload)
           }
         }
       }
@@ -41,7 +41,7 @@ app.post('/webhook', function(req, res) {
     res.status(200).send("OK");
   });
 
-  function sendMessage(senderId, message) {
+  function sendFirstMessage(senderId, message) {
     request({
       url: 'https://graph.facebook.com/v2.6/me/messages',
       qs: {
