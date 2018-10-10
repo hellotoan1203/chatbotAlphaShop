@@ -26,12 +26,11 @@ app.post('/webhook', function(req, res) {
       var messaging = entry.messaging;
       console.log(messaging);
       for (var message of messaging) {
-        
         var senderId = message.sender.id;
         if (message.message) {
           if (message.message.text !== "") {
             var text = message.message.text;
-            console.log(messgae);
+            console.log(message.message);
             //sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop");
           }
         }
