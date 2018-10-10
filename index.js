@@ -31,7 +31,10 @@ app.post('/webhook', function(req, res) {
           if (message.message.text !== "") {
             var text = message.message.text;
             console.log(message.message);
-            //sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop");
+            sendMessage(senderId, "Xin chào bạn đã quan tâm tới AlphaShop, dưới đây là 1 số thông tin nhanh mà chúng mình có thể giúp bạn được");
+            if(message.message.quick_replies){
+              console.log(message.message.quick_replies.payload)
+            }
           }
         }
       }
